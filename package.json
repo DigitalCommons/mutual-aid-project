@@ -17,7 +17,7 @@
   "license": "UNLICENSED",
   "repository": "github:SolidarityEconomyAssociation/mutual-aid-project",
   "dependencies": {
-    "sea-map": "github:SolidarityEconomyAssociation/sea-map#semver:^0.1.50"
+    "sea-map": "github:SolidarityEconomyAssociation/sea-map#semver:^1.0.0"
   },
   "devDependencies": {}
 }
