@@ -10,12 +10,12 @@ PREFIX ospostcode: <http://data.ordnancesurvey.co.uk/id/postcodeunit/>
 PREFIX rov: <http://www.w3.org/ns/regorg#>
 PREFIX osspatialrelations: <http://data.ordnancesurvey.co.uk/ontology/spatialrelations/>
 
-SELECT ?name ?uri ?lat ?lng ?street ?country ?regorg ?www ?facebook
+SELECT ?name ?uri ?lat ?lng ?street ?country ?www ?facebook ?twitter ?desc
 WHERE {
     ?uri rdf:type essglobal:SSEInitiative .
     ?uri gr:name ?name .
-    ?uri essglobal:organisationalStructure ?regorg .
     OPTIONAL { ?uri foaf:homepage ?www . }
+    OPTIONAL { ?uri dc:description ?desc . }
     ?uri essglobal:hasAddress ?addr .
     OPTIONAL { ?addr vcard:street-address ?street . }
     OPTIONAL { ?addr vcard:country-name ?country . }
@@ -25,5 +25,10 @@ WHERE {
         ?uri foaf:account ?accountf .
         ?accountf foaf:accountServiceHomepage "https://facebook.com/" .
         ?accountf foaf:accountName ?facebook .
+    }
+    OPTIONAL {
+        ?uri foaf:account ?account .
+        ?account foaf:accountServiceHomepage "https://twitter.com/" .
+        ?account foaf:accountName ?twitter .
     }
 }

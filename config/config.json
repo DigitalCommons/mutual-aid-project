@@ -1,7 +1,13 @@
 {
   "namedDatasets" : ["mutual-aid"],
   "namedDatasetsVerbose" : ["Mutual-Aid Organisations"],
-  "filterableFields" : [{ "field": "countryId", "label": "Countries" }],
+  "filterableFields" : [],
+  "languages": ["EN"],
+  "vocabularies": [
+    { "endpoint": "http:\/\/data.solidarityeconomy.coop:8890/sparql",
+      "uris": {}
+    }
+  ],
   "showDatasetsPanel" : true,
   "htmlTitle" : "Mutual Aid",
   "tileUrl" : "https:/\/tile.thunderforest.com/atlas/{z}/{x}/{y}.png?apikey=3d5b23b8fe9c4a2a94a3df16f02f125a",
