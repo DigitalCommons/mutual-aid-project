@@ -1,8 +1,11 @@
 {
+  "include": [
+    "node_modules/sea-map"
+  ],
   "compilerOptions": {
     "outDir": "./build/",
     "paths": {
-      "sea-map/*": ["../www/map-app/*"]
+      "sea-map/*": ["./node_modules/sea-map/www/map-app/*","../www/map-app/*"]
     },
     "noImplicitAny": true,
     "sourceMap": true,
