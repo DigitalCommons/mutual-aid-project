@@ -20,5 +20,8 @@
   "dependencies": {
     "sea-map": "github:SolidarityEconomyAssociation/sea-map#semver:^1.2.2"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "ts-loader": "^9.2.8",
+    "typescript": "^4.6.2"
+  }
 }
