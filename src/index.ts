@@ -49,12 +49,6 @@ const config: ConfigData = {
   "mapAttribution" :  "Maps &copy; <a href='http:/\/www.thunderforest.com'>Thunderforest</a> & &copy; <a href='http:/\/www.openstreetmap.org/copyright'>OpenStreetMap contributors</a> | Other data <a href='http:/\/creativecommons.org/licenses/by-sa/2.0/'>CC-BY-SA</a> | Powered by <a href='https:/\/www.geoapify.com/'>Geoapify</a>",
   "defaultLatLng": [50.84999, 4.39434]
 };
-const versions: ConfigData = {
-  "variant": "mutual-aid-project",
-  "timestamp": "2022-03-20T10:49:54.236Z",
-  "gitcommit": "c4f851f-modified",
-  "seaMapVersion": "1.3.1_816957a-modified-devxx"
-};
 
 const combinedConfig = { ...config, ...versions, aboutHtml: about } as ConfigData;
 
