@@ -3,11 +3,36 @@ import { webRun, fetchConfigs} from "sea-map/index";
 // Re-export of ConfigData in sea-map/index above seems not to work,
 // so import it directly from here:
 import type { ConfigData } from  "sea-map/app/model/config_schema";
+import type { Initiative, SseInitiative } from "sea-map/app/model/sse_initiative";
+import { getAddress, getEmail, getTwitter } from "sea-map/app/view/map/default_popup";
+import about from "../config/about.html";
+import * as versions from "../config/version.json";
 
+function customPopup(initiative: Initiative, model: SseInitiative): string {
+  const labels = model.getFunctionalLabels();
+  let popupHTML = `
+    <div class="sea-initiative-details">
+      <h2 class="sea-initiative-name">${initiative.name}</h2>
+      <p>${initiative.desc || ''}</p>
+    </div>
 
-import * as about from "../config/about.html";
+    <div class="sea-initiative-contact">
+      <h3>${labels.contact}</h3>
+      ${getAddress(initiative)}
+      
+      <div class="sea-initiative-links">
+        ${getEmail(initiative)}
+        ${getTwitter(initiative)}
+      </div>
+    </div>
+  `;
+  
+  return popupHTML;
+}
+
 
 const config: ConfigData = {
+  customPopup: customPopup,
   "namedDatasets" : ["mutual-aid"],
   "namedDatasetsVerbose" : ["Mutual-Aid Organisations"],
   "filterableFields" : [],
