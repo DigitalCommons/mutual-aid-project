@@ -3,7 +3,9 @@ import { webRun, fetchConfigs} from "sea-map/index";
 // Re-export of ConfigData in sea-map/index above seems not to work,
 // so import it directly from here:
 import type { ConfigData } from  "sea-map/app/model/config_schema";
-import type { Initiative, SseInitiative } from "sea-map/app/model/sse_initiative";
+import type {
+  Initiative, SseInitiative, CustomPropDef, InitiativeObj
+} from "sea-map/app/model/sse_initiative";
 import { getAddress, getEmail, getTwitter } from "sea-map/app/view/map/default_popup";
 import about from "../config/about.html";
 import * as versions from "../config/version.json";
@@ -35,7 +37,18 @@ const config: ConfigData = {
   customPopup: customPopup,
   namedDatasets : ["mutual-aid"],
   namedDatasetsVerbose : ["Mutual-Aid Organisations"],
-  filterableFields : [],
+  filterableFields : [
+    'alphabetical',
+  ],
+  fields: {
+    twitter: 'value',
+    alphabetical: {
+      type: 'custom',
+      calling: (id, def, params) => {
+        return params.name.charAt(0);
+      },
+    },
+  },
   languages: ["EN"],
   vocabularies: [
     { "endpoint": "http:\/\/dev.data.solidarityeconomy.coop:8890/sparql",
