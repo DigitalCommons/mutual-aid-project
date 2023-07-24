@@ -16,9 +16,9 @@
   },
   "author": "Solidarity Economy Association",
   "license": "UNLICENSED",
-  "repository": "github:SolidarityEconomyAssociation/mutual-aid-project",
+  "repository": "github:DigitalCommons/mutual-aid-project",
   "dependencies": {
-    "sea-map": "github:SolidarityEconomyAssociation/sea-map#semver:^1.2.2"
+    "sea-map": "github:DigitalCommons/mykomap#semver:^1.2.2"
   },
   "devDependencies": {
     "ts-loader": "^9.2.8",
