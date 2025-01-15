@@ -10,7 +10,7 @@ PREFIX ospostcode: <http://data.ordnancesurvey.co.uk/id/postcodeunit/>
 PREFIX rov: <http://www.w3.org/ns/regorg#>
 PREFIX osspatialrelations: <http://data.ordnancesurvey.co.uk/ontology/spatialrelations/>
 
-SELECT ?name ?uri ?lat ?lng ?street ?country ?www ?facebook ?twitter ?desc
+SELECT ?name ?uri ?lat ?lng ?country ?www ?facebook ?twitter ?desc
 WHERE {
     ?uri rdf:type essglobal:SSEInitiative .
     ?uri gr:name ?name .
